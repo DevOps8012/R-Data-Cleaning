@@ -18,7 +18,7 @@ categorize <- function(df, strings, categories) {
     df <- df[-index,]
   }
   
-  # add OTHER to unmatched rows
+  # OTHER category for unmatched rows
   if (nrow(df) > 0) {
     df$Category <- "OTHER"
     catDF <- rbind(catDF, df)
@@ -28,10 +28,10 @@ categorize <- function(df, strings, categories) {
   catDF <- catDF[order(catDF$sequence),]
   catDF$sequence <- NULL
   
-  # clear the row names
+  # remove row names
   rownames(catDF) <- NULL
   
-  # set new categories to factors
+  # set Category type to factor
   catDF$Category <- as.factor(catDF$Category)
   catDF
 }
