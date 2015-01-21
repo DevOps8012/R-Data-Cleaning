@@ -1,3 +1,5 @@
+# Quickly categorize a data frame with a column of messy character strings.
+
 categorizeDF <- function(df, searchColName, searchList, catList, newColName="Category") {
   # create empty data frame to hold categories
   catDF <- data.frame(matrix(ncol=ncol(df), nrow=0))
